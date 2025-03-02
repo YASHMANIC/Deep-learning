@@ -31,11 +31,18 @@ COPY setup.py .
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
+ENV PYTHONPATH=/app
+
+# Create directory for Chroma database
+RUN mkdir -p /app/chroma_db
+
 # Clean up after install
 RUN rm -rf /root/.cache
 
 # Copy the rest of the application
 COPY . .
+
+RUN chmod -R 777 /app/chroma_db
 
 # Run the app
 CMD ["python", "app.py"]
