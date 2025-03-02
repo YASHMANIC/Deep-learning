@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from src.helper import download_hugging_face_embeddings
-from langchain_pinecone import PineconeVectorStore
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
@@ -25,7 +24,7 @@ embeddings = download_hugging_face_embeddings()
 index_name = None
 
 # Initialize the client with the path to your Chroma database
-client = PersistentClient(path="/home/yaswanth/Yaswanth/Projects/MediBot/chroma_db")
+client = PersistentClient(path="./chroma_db")
 
 # Get all collections
 collections = client.list_collections()

@@ -8,4 +8,5 @@ langchain_community
 langchain_experimental
 langchain-groq
 langchain-core
+chromadb===0.4.22
 -e .
