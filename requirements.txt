@@ -1,0 +1,11 @@
+sentence-transformers == 3.3.1
+gunicorn>=20.0.4
+langchain
+flask
+pypdf
+python-dotenv
+langchain_community
+langchain_experimental
+langchain-groq
+langchain-core
+-e .
